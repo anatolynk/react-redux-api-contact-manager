@@ -1,4 +1,15 @@
 const notification = (store) => (next) => (action) => {
+  if (action.type === "api/requestFail") {
+    ///
+    store.dispatch({
+      type: "users/sendNotification",
+      payload: {
+        loading: false,
+        message: "Error: Something went wrong",
+      },
+    });
+  }
+
   if (
     action.type === "toggle" ||
     action.type === "add" ||
@@ -51,6 +62,16 @@ const notification = (store) => (next) => (action) => {
       payload: {
         loading: false,
         message: "New Contact created",
+      },
+    });
+  }
+
+  if (action.type.includes("requestFail")) {
+    store.dispatch({
+      type: "users/sendNotification",
+      payload: {
+        loading: false,
+        message: "Error: Something went wrong",
       },
     });
   }

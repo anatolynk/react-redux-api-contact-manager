@@ -15,8 +15,8 @@ export const store = configureStore({
     ...getDefaultMiddleware({
       serializableCheck: false,
     }),
+    notification,
     api,
     logger,
-    notification,
   ],
 });

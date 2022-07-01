@@ -46,6 +46,7 @@ import {
   Stars,
   Trash,
   UserCircle,
+  CircleX,
 } from "tabler-icons-react";
 
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
@@ -184,15 +185,26 @@ const UserList = () => {
         disallowClose: false,
       });
     }
-    if (!users.notification.loading)
-      updateNotification({
-        id: "load-data",
-        color: "teal",
-        radius: "lg",
-        message: users.notification.message || "Updated",
-        icon: <Check />,
-        autoClose: 2500,
-      });
+    if (!users.notification.loading) {
+      if (users.notification.message.includes("Error")) {
+        updateNotification({
+          id: "load-data",
+          color: "pink",
+          radius: "lg",
+          message: users.notification.message || "Error",
+          icon: <CircleX />,
+          autoClose: 3000,
+        });
+      } else
+        updateNotification({
+          id: "load-data",
+          color: "teal",
+          radius: "lg",
+          message: users.notification.message || "Updated",
+          icon: <Check />,
+          autoClose: 2500,
+        });
+    }
     return () => {
       // cleanup
     };
