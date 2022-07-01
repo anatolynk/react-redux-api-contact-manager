@@ -240,7 +240,10 @@ const UserList = () => {
 
         <td>
           <Group>
-            <MediaQuery largerThan='sm' styles={{ display: "none" }}>
+            <MediaQuery
+              query='(max-width: 870px)'
+              styles={{ display: "none" }}
+            >
               <Link to={`/edit-user/${user.id}`}>
                 <Avatar size='md' radius='xl' src={user?.avatar} />
               </Link>
@@ -267,7 +270,7 @@ const UserList = () => {
         </MediaQuery>
         <td>
           <MediaQuery
-            query='(max-width: 410px)'
+            query='(max-width: 450px)'
             styles={{ display: "none" }}
           >
             <Group position='center'>
