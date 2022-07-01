@@ -13,10 +13,7 @@ root.render(
   <TypographyStylesProvider>
     <Provider store={store}>
       <BrowserRouter>
-        <NotificationsProvider
-          position='bottom-center'
-          autoClose='true'
-        >
+        <NotificationsProvider position='top-center' autoClose='true'>
           <App />
         </NotificationsProvider>
       </BrowserRouter>

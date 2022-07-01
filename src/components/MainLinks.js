@@ -76,12 +76,12 @@ export function MainLinks() {
   return (
     <div>
       <Link to='/add-user'>
-        <div style={{ width: 200 }}>
+        <div style={{ width: 150 }}>
           <Button
             leftIcon={<Plus />}
             label='Create contact'
             radius='xl'
-            size='md'
+            size='sm'
             variant='gradient'
             gradient={{ from: "teal", to: "blue", deg: 60 }}
           >

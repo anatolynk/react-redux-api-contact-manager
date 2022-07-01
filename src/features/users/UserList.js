@@ -240,7 +240,7 @@ const UserList = () => {
 
         <td>
           <Group>
-            <MediaQuery smallerThan='xs' styles={{ display: "none" }}>
+            <MediaQuery largerThan='sm' styles={{ display: "none" }}>
               <Link to={`/edit-user/${user.id}`}>
                 <Avatar size='md' radius='xl' src={user?.avatar} />
               </Link>
@@ -250,7 +250,7 @@ const UserList = () => {
           </Group>
         </td>
 
-        <MediaQuery smallerThan='md' styles={{ display: "none" }}>
+        <MediaQuery smallerThan='sm' styles={{ display: "none" }}>
           <td>
             <Text>{user.email}</Text>
           </td>
@@ -266,7 +266,10 @@ const UserList = () => {
           </td>
         </MediaQuery>
         <td>
-          <MediaQuery smallerThan='xs' styles={{ display: "none" }}>
+          <MediaQuery
+            query='(max-width: 410px)'
+            styles={{ display: "none" }}
+          >
             <Group position='center'>
               <ActionIcon color='grape' label='Archive' size='xs'>
                 {!user?.hidden ? (
@@ -285,6 +288,7 @@ const UserList = () => {
                   />
                 )}
               </ActionIcon>
+
               <Link to={`/edit-user/${user.id}`}>
                 <ActionIcon color='indigo' size='xs'>
                   <Edit size='18' />
@@ -354,7 +358,7 @@ const UserList = () => {
               <th>Name</th>
 
               <MediaQuery
-                smallerThan='md'
+                smallerThan='sm'
                 styles={{ display: "none" }}
               >
                 <th>Email</th>
