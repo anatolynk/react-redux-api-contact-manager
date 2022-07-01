@@ -13,6 +13,9 @@ import {
   Burger,
   useMantineTheme,
   Blockquote,
+  Anchor,
+  Collapse,
+  Button,
 } from "@mantine/core";
 import { useState } from "react";
 
@@ -29,6 +32,7 @@ import { addUser, deleteUser } from "./store/usersSlice";
 function App() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+  const [openedContact, setOpenContact] = useState(false);
 
   return (
     <div>
@@ -69,8 +73,21 @@ function App() {
           <MediaQuery smallerThan='xl' styles={{ display: "none" }}>
             <Footer height={50} p='sm'>
               <Text color='dimmed' align='center' size='md'>
-                Project: React, Redux, Rest API - Anatoly Nikulyak,
-                Contact: https://github.com/anatolynk
+                <b>E-mail: </b>
+                <Anchor
+                  href='mailto: anatoly.nk@gmail.com'
+                  target='_blank'
+                >
+                  anatoly.nk@gmail.com
+                </Anchor>
+                &nbsp;&nbsp;&nbsp;
+                <b>GitHub: </b>
+                <Anchor
+                  href='https://github.com/anatolynk'
+                  target='_blank'
+                >
+                  https://github.com/anatolynk
+                </Anchor>
               </Text>
             </Footer>
           </MediaQuery>

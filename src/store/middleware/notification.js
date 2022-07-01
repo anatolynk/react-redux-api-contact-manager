@@ -66,16 +66,6 @@ const notification = (store) => (next) => (action) => {
     });
   }
 
-  if (action.type.includes("requestFail")) {
-    store.dispatch({
-      type: "users/sendNotification",
-      payload: {
-        loading: false,
-        message: "Error: Something went wrong",
-      },
-    });
-  }
-
   next(action);
 };
 
